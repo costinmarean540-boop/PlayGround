@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#10121b">
+  <title>Star Brawl — Arena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <canvas id="game" aria-label="3D arena game"></canvas>
+    <div class="vignette"></div>
+    <section id="home" class="screen">
+      <header class="topbar"><div class="brand"><span class="brand-mark">✦</span><span>STAR<span class="brand-light">BRAWL</span></span></div><div class="profile"><span class="avatar">★</span><span>Rookie <small>LEVEL 1</small></span><b>⚙</b></div></header>
+      <div class="hero-copy"><div class="eyebrow"><i></i> THE ARENA IS OPEN</div><h1>DROP IN.<br><em>STAND OUT.</em></h1><p>One arena. A hundred ways to brawl.<br>Only one makes it out.</p></div>
+      <div class="home-bottom"><div class="home-card"><div class="card-label">YOUR BRAWLER</div><div class="picked-row"><div id="selectedPortrait" class="picked-portrait">⚡</div><div><h2 id="selectedName">Shelly</h2><span id="selectedType">THE ALL-ROUNDER</span></div><button id="openRoster" class="change-btn">CHANGE <b>↗</b></button></div><div class="stats"><div><span>HEALTH</span><i class="stat-track"><b style="width:82%"></b></i></div><div><span>POWER</span><i class="stat-track power"><b style="width:68%"></b></i></div><div><span>SPEED</span><i class="stat-track speed"><b style="width:76%"></b></i></div></div></div>
+        <div class="play-block"><div class="mode-row"><span class="mode-icon">◈</span><div><b>SOLO SHOWDOWN</b><small>LAST BRAWLER STANDING</small></div><span class="mode-arrow">⌄</span></div><button id="playBtn" class="play-btn"><span>PLAY</span><b>→</b></button><div class="play-hint">WASD / ARROWS TO MOVE <span>•</span> CLICK / SPACE TO ATTACK</div></div>
+      </div>
+      <button id="mapButton" class="map-chip"><span>▧</span><span><small>YOUR ARENA</small><b id="mapName">SUNSET CANYON</b></span><b class="map-chevron">⌄</b></button>
+      <div class="menu-decoration decoration-one"></div><div class="menu-decoration decoration-two"></div>
+    </section>
+    <section id="roster" class="modal hidden"><div class="modal-card roster-card"><div class="modal-head"><div><div class="eyebrow">PICK YOUR FIGHTER</div><h2>THE ROSTER <span id="rosterCount">108</span></h2></div><button class="close-btn" data-close="roster">×</button></div><div class="roster-tools"><input id="rosterSearch" type="search" placeholder="Search brawlers..." autocomplete="off"><span>108 BRAWLERS</span></div><div id="rosterGrid" class="roster-grid"></div></div></section>
+    <section id="maps" class="modal hidden"><div class="modal-card map-card"><div class="modal-head"><div><div class="eyebrow">CHOOSE YOUR BATTLEGROUND</div><h2>ARENA SELECT</h2></div><button class="close-btn" data-close="maps">×</button></div><div id="mapChoices" class="map-choices"></div></div></section>
+    <section id="matchHud" class="match-hud hidden"><div class="hud-top"><div class="hud-pill alive"><span class="alive-dot"></span><b id="aliveCount">10</b><span>LEFT</span></div><div class="hud-map"><span id="hudMapName">SUNSET CANYON</span><small>SOLO SHOWDOWN</small></div><div class="hud-pill timer"><span>◷</span><b id="timer">00:00</b></div></div><div class="player-hud"><div class="health-wrap"><div class="health-label"><span id="hudPlayerName">SHELLY</span><b id="healthText">1000 / 1000</b></div><div class="health-track"><i id="healthBar"></i></div></div><div class="ammo-row"><i></i><i></i><i></i></div></div><div class="controls-hint"><span>WASD</span> MOVE <span>•</span> AIM + CLICK <span>•</span> <kbd>Q</kbd> SUPER</div><div class="touch-controls"><div id="joystick" class="joystick"><div class="joy-knob"></div></div><button id="touchSuper" class="touch-super">⚡</button><button id="touchFire" class="touch-fire">✦</button></div><button id="quitMatch" class="quit-btn">Ⅱ</button></section>
+    <section id="result" class="modal hidden"><div class="result-card"><div class="result-kicker" id="resultKicker">MATCH OVER</div><div class="result-icon" id="resultIcon">✦</div><h2 id="resultTitle">VICTORY</h2><p id="resultCopy">You are the last brawler standing.</p><div class="result-stats"><div><b id="resultRank">#1</b><span>RANK</span></div><div><b id="resultKOs">0</b><span>TAKEDOWNS</span></div><div><b id="resultTime">00:00</b><span>TIME</span></div></div><button id="againBtn" class="play-btn"><span>PLAY AGAIN</span><b>→</b></button><button id="menuBtn" class="menu-return">BACK TO HANGAR</button></div></section>
+    <div id="toast" class="toast hidden"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
